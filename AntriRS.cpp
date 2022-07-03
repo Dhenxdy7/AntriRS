@@ -53,7 +53,7 @@ void AntrianKeluar()
 {
   if(IsEmpty())
   {
-    cout<<"Antrian sudah kosong ! ";
+    cout<<"Antrian Loket sudah kosong ! ";
     getch();
   }
   else
@@ -81,7 +81,7 @@ void View()
 {
   if(IsEmpty())
   {
-    cout<<"Antrian kosong ! ";
+    cout<<"Antrian Loket kosong ! ";
   }
   else
   {
@@ -89,7 +89,7 @@ void View()
     for(int a=head;a<=tail;a++)
     {
       cout << "========================================="
-           << "\n >> No. Antri : [" << nomer[a] << "]"
+           << "\n >> No. Antri Loket : [" << nomer[a] << "]"
            << "\n========================================" << endl;
     }
   }
@@ -103,13 +103,13 @@ int main()
   {
     system("cls");
     cout << "\n\n====== Stasiun Lempuyangan ======"
-         << "\n================================"
+         << "\n================================="
          << "\n|1. Tambah Antrian Loket Kereta              "
          << "\n|2. Layani Antrian Loket Kereta              "
          << "\n|3. Lihat daftar Antrian Loket               "
          << "\n|4. Hapus Antrian Loket                      "
          << "\n|5. Tutup Antrian Loket Stasiun              "
-         << "\n|===============================";
+         << "\n|================================";
     cout << "\nChoose ! "; cin >> choose;
     cout << "\n\n";
     if(choose == 1)
@@ -122,19 +122,21 @@ int main()
       {
         urut=p;
         AntrianMasuk(urut);
-        cout << "-----------------------------------" << endl;
+        cout << "---------------------------------------------" << endl;
         cout << "|            NO. ANTRIAN LOKET              |" << endl;
-        cout << "|               " << p << "                ||" << endl;
-        cout << "-----------------------------------" << endl;
+        cout << "|                    " << p << "                      |" << endl;
+        cout << "---------------------------------------------" << endl;
         cout << "|            Silahkan Mengantri             |" << endl;
-        cout << "|       Menunggu " << tail << " Antrian       ||" << endl;
-        cout << "-----------------------------------" << endl;
+        cout << "|            Menunggu " << tail << " Antrian             |" << endl;
+        cout << "---------------------------------------------" << endl;
         p++;
       }
     } 
     else if(choose ==2)
     {
-      cout << "-----------------------------------" << endl;
+      cout << "---------------------------------" << endl;
+      cout << "       Stasiun Lempuyangan       " << endl;
+      cout << "---------------------------------" << endl;
       cout << "No. Antri Loket : ["<< nomer[head] <<    "]";
       cout << "\n=================================" << endl;
       AntrianKeluar();
