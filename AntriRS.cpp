@@ -60,7 +60,7 @@ void AntrianKeluar()
   {
     for(int a=head;a<tail;a++)
     {
-      nomer[a]=nomer[a=1];
+      nomer[a]=nomer[a+1];
     }
     tail--;
     if(tail ==- 1)
@@ -88,7 +88,7 @@ void View()
     system("cls");
     for(int a=head;a<=tail;a++)
     {
-      cout << "========================================="
+      cout << "=========================================="
            << "\n >> No. Antri : [" << nomer[a] << "]"
            << "\n========================================" << endl;
     }
