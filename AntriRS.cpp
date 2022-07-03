@@ -70,13 +70,13 @@ void AntrianKeluar()
   }
 }
 
-//Fungsi untuk menghapus semua antrian
+//Fungsi untuk menghapus semua antrian loket
 void Clear()
 {
   head=tail=-1;
 }
 
-//Fungsi untuk melihat semua antrian
+//Fungsi untuk melihat semua antrian loket
 void View()
 {
   if(IsEmpty())
@@ -134,13 +134,13 @@ int main()
     } 
     else if(choose ==2)
     {
-      AntrianKeluar();
       cout << "---------------------------------" << endl;
       cout << "       Stasiun Lempuyangan       " << endl;
       cout << "---------------------------------" << endl;
       cout << "No. Antri Loket : ["<< nomer[head] <<    "]";
       cout << "\n=================================" << endl;
-      cout << "Silahkan Dipanggil !" << endl;
+      AntrianKeluar();
+      cout << "\nSilahkan Dipanggil !" << endl;
     }
     else if(choose ==3)
     {
