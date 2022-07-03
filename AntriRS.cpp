@@ -2,7 +2,7 @@
 #include <conio.h>
 #include <stdlib.h>
 
-#define MAX 1000
+#define MAX 10
 
 using namespace std;
 
@@ -10,7 +10,7 @@ int nomer[MAX];
 int head=-1;
 int tail=-1;
 
-//Fungsi Untuk pengecekan antrian
+//Fungsi Untuk pengecekan antrian Loket
 bool IsEmpty()
 {
   if(tail == -1)
@@ -34,7 +34,7 @@ bool IsFull()
   }
 }
 
-//Fungsi untuk memasukan antrian (queue) kedalam array
+//Fungsi untuk memasukan antrian loket (queue) kedalam array
 void AntrianMasuk(int no)
 {
   if(IsEmpty())
@@ -48,7 +48,7 @@ void AntrianMasuk(int no)
   nomer[tail]=no;
 }
 
-//Fungsi untuk menghapus antrian
+//Fungsi untuk menghapus antrian loket
 void AntrianKeluar()
 {
   if(IsEmpty())
@@ -88,7 +88,7 @@ void View()
     system("cls");
     for(int a=head;a<=tail;a++)
     {
-      cout << "=========================================="
+      cout << "========================================="
            << "\n >> No. Antri : [" << nomer[a] << "]"
            << "\n========================================" << endl;
     }
@@ -97,18 +97,18 @@ void View()
 
 int main()
 {
-  system("color 79");
+  //system("color 80");
   int choose, p=1, urut;
   do
   {
     system("cls");
-    cout << "\n\n===== PROGRAM ANTRIAN C++ ====="
+    cout << "\n\n====== Stasiun Lempuyangan ======"
          << "\n================================"
-         << "\n|1. Tambah Antrian              "
-         << "\n|2. Panggil Antrian             "
-         << "\n|3. Lihat daftar antrian        "
-         << "\n|4. Format                      "
-         << "\n|5. Exit                        "
+         << "\n|1. Tambah Antrian Loket Kereta              "
+         << "\n|2. Layani Antrian Loket Kereta              "
+         << "\n|3. Lihat daftar Antrian Loket               "
+         << "\n|4. Hapus Antrian Loket                      "
+         << "\n|5. Tutup Antrian Loket Stasiun              "
          << "\n|===============================";
     cout << "\nChoose ! "; cin >> choose;
     cout << "\n\n";
@@ -116,17 +116,17 @@ int main()
     {
       if(IsFull())
       {
-        cout << "Antrian sudah penuh, mohon tunggu beberapa saat lagi";
+        cout << "Loket Kereta penuh, mohon tunggu beberapa saat lagi";
       }
       else
       {
         urut=p;
         AntrianMasuk(urut);
         cout << "-----------------------------------" << endl;
-        cout << "|           NO. ANTRIAN           |" << endl;
-        cout << "|               " << p << "               ||" << endl;
+        cout << "|            NO. ANTRIAN LOKET              |" << endl;
+        cout << "|               " << p << "                ||" << endl;
         cout << "-----------------------------------" << endl;
-        cout << "|        Silahkan Mengantri       |" << endl;
+        cout << "|            Silahkan Mengantri             |" << endl;
         cout << "|       Menunggu " << tail << " Antrian       ||" << endl;
         cout << "-----------------------------------" << endl;
         p++;
@@ -135,7 +135,7 @@ int main()
     else if(choose ==2)
     {
       cout << "-----------------------------------" << endl;
-      cout << "No. Antri : ["<< nomer[head] <<    "]";
+      cout << "No. Antri Loket : ["<< nomer[head] <<    "]";
       cout << "\n=================================" << endl;
       AntrianKeluar();
       cout << "Silahkan Dipanggil !" << endl;
@@ -147,10 +147,11 @@ int main()
     else if(choose ==4)
     {
       Clear();
-      cout << "Antrian dikosongkan ! ";
+      cout << "Antrian Loket dikosongkan ! ";
     }
     else if(choose ==5)
-    { 
+    {
+      cout << "Loket Stasiun Lempuyangan Berhenti Beroperasi"; 
     }
     else
     {
