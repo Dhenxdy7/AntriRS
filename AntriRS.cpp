@@ -134,19 +134,13 @@ int main()
     } 
     else if(choose ==2)
     {
-      if(IsEmpty())
-      {
-        AntrianKeluar();
-      }
-      else
-      {
-        cout << "---------------------------------" << endl;
-        cout << "       Stasiun Lempuyangan       " << endl;
-        cout << "---------------------------------" << endl;
-        cout << "No. Antri Loket : ["<< nomer[head] <<    "]";
-        cout << "\n=================================" << endl;
-        cout << "Silahkan Dipanggil !" << endl;
-      }
+      AntrianKeluar();
+      cout << "---------------------------------" << endl;
+      cout << "       Stasiun Lempuyangan       " << endl;
+      cout << "---------------------------------" << endl;
+      cout << "No. Antri Loket : ["<< nomer[head] <<    "]";
+      cout << "\n=================================" << endl;
+      cout << "Silahkan Dipanggil !" << endl;
     }
     else if(choose ==3)
     {
