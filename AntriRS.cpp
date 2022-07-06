@@ -136,7 +136,7 @@ int main()
     {
       if(IsEmpty())
       {
-        cout<<"Antrian Loket sudah kosong ! ";
+        cout<<"Antrian Loket sedang kosong ! ";
         getch();
       }
       else
