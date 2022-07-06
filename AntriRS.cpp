@@ -51,13 +51,13 @@ void AntrianMasuk(int no)
 //Fungsi untuk menghapus antrian loket
 void AntrianKeluar()
 {
-  if(IsEmpty())
+  /*if(IsEmpty())
   {
     cout<<"Antrian Loket sudah kosong ! ";
     getch();
   }
   else
-  {
+  {*/
     for(int a=head;a<tail;a++)
     {
       nomer[a]=nomer[a+1];
@@ -68,7 +68,7 @@ void AntrianKeluar()
       head = -1;
     }
   }
-}
+//}
 
 //Fungsi untuk menghapus semua antrian loket
 void Clear()
@@ -134,13 +134,21 @@ int main()
     } 
     else if(choose ==2)
     {
-      cout << "---------------------------------" << endl;
-      cout << "       Stasiun Lempuyangan       " << endl;
-      cout << "---------------------------------" << endl;
-      cout << "No. Antri Loket : ["<< nomer[head] <<    "]";
-      cout << "\n=================================" << endl;
-      AntrianKeluar();
-      cout << "\nSilahkan Dipanggil !" << endl;
+      if(IsEmpty())
+      {
+        cout<<"Antrian Loket sudah kosong ! ";
+        getch();
+      }
+      else
+      {
+        cout << "---------------------------------" << endl;
+        cout << "       Stasiun Lempuyangan       " << endl;
+        cout << "---------------------------------" << endl;
+        cout << "No. Antri Loket : ["<< nomer[head] <<    "]";
+        cout << "\n=================================" << endl;
+        AntrianKeluar();
+        cout << "\nSilahkan Dipanggil !" << endl;
+      }
     }
     else if(choose ==3)
     {
