@@ -51,24 +51,16 @@ void AntrianMasuk(int no)
 //Fungsi untuk menghapus antrian loket
 void AntrianKeluar()
 {
-  /*if(IsEmpty())
+  for(int a=head;a<tail;a++)
   {
-    cout<<"Antrian Loket sudah kosong ! ";
-    getch();
+    nomer[a]=nomer[a+1];
   }
-  else
-  {*/
-    for(int a=head;a<tail;a++)
-    {
-      nomer[a]=nomer[a+1];
-    }
-    tail--;
-    if(tail ==- 1)
-    {
-      head = -1;
-    }
+  tail--;
+  if(tail ==- 1)
+  {
+     head = -1;
   }
-//}
+}
 
 //Fungsi untuk menghapus semua antrian loket
 void Clear()
@@ -81,16 +73,16 @@ void View()
 {
   if(IsEmpty())
   {
-    cout<<"Antrian Loket kosong ! ";
+    cout<< "|============= Antrian Loket kosong ! ==============|";
   }
   else
   {
     system("cls");
     for(int a=head;a<=tail;a++)
     {
-      cout << "========================================="
-           << "\n >> No. Antri Loket : [" << nomer[a] << "]"
-           << "\n========================================" << endl;
+      cout << "|===================================================|"
+           << "\n|             >> No. Antri Loket : [" << nomer[a] << "]              |"
+           << "\n|===================================================|" << endl;
     }
   }
 }
@@ -102,33 +94,37 @@ int main()
   do
   {
     system("cls");
-    cout << "\n\n====== Stasiun Lempuyangan ======"
-         << "\n================================="
-         << "\n|1. Tambah Antrian Loket Kereta              "
-         << "\n|2. Layani Antrian Loket Kereta              "
-         << "\n|3. Lihat daftar Antrian Loket               "
-         << "\n|4. Hapus Antrian Loket                      "
-         << "\n|5. Tutup Antrian Loket Stasiun              "
-         << "\n|================================";
+    cout << "\n\n|============= PT.Kereta Api Indonesia =============|"
+         << "\n|=============== Stasiun Lempuyangan ===============|"
+         << "\n|===================================================|"
+         << "\n|1. Tambah Antrian Loket Kereta                     |"
+         << "\n|2. Layani Antrian Loket Kereta                     |"
+         << "\n|3. Lihat daftar Antrian Loket                      |"
+         << "\n|4. Hapus Antrian Loket                             |"
+         << "\n|5. Tutup Antrian Loket Stasiun                     |"
+         << "\n|===================================================|";
     cout << "\nChoose ! "; cin >> choose;
     cout << "\n\n";
     if(choose == 1)
     {
       if(IsFull())
       {
-        cout << "Loket Kereta penuh, mohon tunggu beberapa saat lagi";
+        cout << "|Loket Kereta penuh, mohon tunggu beberapa saat lagi|";
       }
       else
       {
         urut=p;
         AntrianMasuk(urut);
-        cout << "---------------------------------------------" << endl;
+        cout << "|======== PT. Kereta Api Indonesia =========|" << endl;
+        cout << "|-------------------------------------------|" << endl;
+        cout << "|           Stasiun Lempuyangan             |" << endl; 
+        cout << "|-------------------------------------------|" << endl;
         cout << "|            NO. ANTRIAN LOKET              |" << endl;
         cout << "|                    " << p << "                      |" << endl;
-        cout << "---------------------------------------------" << endl;
+        cout << "|-------------------------------------------|" << endl;
         cout << "|            Silahkan Mengantri             |" << endl;
         cout << "|            Menunggu " << tail << " Antrian             |" << endl;
-        cout << "---------------------------------------------" << endl;
+        cout << "|===========================================|" << endl;
         p++;
       }
     } 
@@ -136,36 +132,39 @@ int main()
     {
       if(IsEmpty())
       {
-        cout<<"Antrian Loket sedang kosong ! ";
+        cout <<"|========== Antrian Loket sedang kosong! ===========|";
         getch();
       }
       else
       {
-        cout << "---------------------------------" << endl;
-        cout << "       Stasiun Lempuyangan       " << endl;
-        cout << "---------------------------------" << endl;
-        cout << "No. Antri Loket : ["<< nomer[head] <<    "]";
-        cout << "\n=================================" << endl;
+        cout << "|===== PT. Kereta Api Indonesia =====|" << endl;
+        cout << "|------------------------------------|" << endl;
+        cout << "|         Stasiun Lempuyangan        |" << endl;
+        cout << "|------------------------------------|" << endl;
+        cout << "|        No. Antri Loket : ["<< nomer[head] <<    "]       |";
+        cout << "\n|====================================|" << endl;
+        cout << "|                                    |" << endl;
         AntrianKeluar();
-        cout << "\nSilahkan Dipanggil !" << endl;
+        cout << "|======= Silahkan Dipanggil ! =======|" << endl;
       }
     }
     else if(choose ==3)
     {
       View();
+      cout << "\n|============ PT. Kereta Api Indonesia =============|";
     } 
     else if(choose ==4)
     {
       Clear();
-      cout << "Antrian Loket dikosongkan ! ";
+      cout << "|=========== Antrian Loket dikosongkan ! ===========|";
     }
     else if(choose ==5)
     {
-      cout << "Loket Stasiun Lempuyangan Berhenti Beroperasi"; 
+      cout << "|== Loket Stasiun Lempuyangan Berhenti Beroperasi ==|"; 
     }
     else
     {
-      cout << "Masukan anda salah! \n" << endl;
+      cout << "|=============== Masukan anda salah! ===============|\n" << endl;
     }
     getch();
   }

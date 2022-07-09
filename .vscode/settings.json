@@ -4,4 +4,8 @@
     "window.zoomLevel": 0,
     "workbench.iconTheme": "vscode-icons",
     "workbench.colorTheme": "Matte Black Theme",
+    "files.associations": {
+        "iostream": "cpp",
+        "ostream": "cpp"
+    },
 }
